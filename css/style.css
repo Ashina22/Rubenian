@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+span{color: #28c986;}
+
+body {
+    font-family: 'Poppins';
+    font-size: 0.875rem;
+    opacity: 1;
+    overflow-y: scroll;
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+h4, h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: var(--bs-emphasis-color);
+    text-align: center;
+    margin: 20px;
+}
+
+h5{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+/* Layout for admin dashboard skeleton */
+
+.wrapper {
+    align-items: stretch;
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    max-width: 264px;
+    min-width: 264px;
+    background: var(--bs-dark);
+    transition: all 0.35s ease-in-out;
+    
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    width: 100%;
+    background: var(--bs-light-bg-subtle);
+}
+
+/* Sidebar Elements Style */
+
+.sidebar-logo {
+    padding: 1.15rem;
+}
+
+.sidebar-logo a {
+    color: #e9ecef;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.sidebar-header {
+    color: #e9ecef;
+    font-size: .75rem;
+    padding: 1.5rem 1.5rem .375rem;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #e9ecef;
+    position: relative;
+    display: block;
+    font-size: 0.875rem;
+}
+
+.sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar {
+    padding-top: 20px; /* Adjust as needed */
+}
+
+
+.navbar-expand .navbar-nav {
+    margin-left: auto;
+}
+
+.content {
+    flex: 1;
+    max-width: 100vw;
+    width: 100vw;
+}
+
+@media (min-width:768px) {
+    .content {
+        max-width: auto;
+        width: auto;
+    }
+}
+
+.card {
+    box-shadow: 0 0 .875rem 0 rgba(34, 46, 60, .05);
+    margin-bottom: 24px;
+}
+
+.illustration {
+    background-color: var(--bs-primary-bg-subtle);
+    color: var(--bs-emphasis-color);
+}
+
+.illustration-img {
+    max-width: 150px;
+    width: 100%;
+}
+
+/* Sidebar Toggle and General Responsiveness */
+
+
+#sidebar.collapsed {
+    margin-left: -264px;
+}
+
+/* Footer and Nav */
+
+.footer {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    color: rgb(44, 44, 44);
+    background-color: #2a2a2b !important;
+    color: #ffffff;
+  }
+  
+  .footer-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+
+@media (max-width:767.98px) {
+
+    .js-sidebar {
+        margin-left: -264px;
+    }
+
+    #sidebar.collapsed {
+        margin-left: 0;
+    }
+
+    .navbar,
+    footer {
+        width: 100vw;
+    }
+}
+
+.footer{
+    background-color: rgb(36, 36, 36);
+    color: #ffffff;
+}
+
+/* Theme Toggler */
+
+.theme-toggle {
+    position: fixed;
+   bottom: 70%;
+    transform: translateY(-65%);
+    text-align: center;
+    z-index: 10;
+    right: 0;
+    left: auto;
+    border: none;
+    background-color: var(--bs-body-color);
+}
+
+html[data-bs-theme="dark"] .theme-toggle .fa-sun,
+html[data-bs-theme="light"] .theme-toggle .fa-moon {
+    cursor: pointer;
+    padding: 5px;
+    display: block;
+    font-size: 1.25rem;
+    color: #FFF;
+}
+
+html[data-bs-theme="dark"] .theme-toggle .fa-moon {
+    display: none;
+}
+
+html[data-bs-theme="light"] .theme-toggle .fa-sun {
+    display: none;
+}
+
+.custom-search-input {
+    max-width: 400px; /* Adjust as needed */
+    width: 100%; /* Ensures it adapts on smaller screens */
+}
+
+.custom-search-input::placeholder{
+    color: rgb(134, 134, 134);
+}
+
+.search-bar{
+    margin-bottom: 30px;
+}
+
+.search-btn{
+    background-color: rgb(37, 153, 134);
+    color: #f1f1f1;
+}
+
+.search-btn:hover{
+    background-color: rgb(42, 168, 147);
+    color: #ffffff;
+}
+
+@media (max-width: 768px) { 
+    .navbar {
+        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    }
+    .footer {
+        padding: 1rem; /* Ensure footer has padding on smaller screens */
+    }
+
+    .custom-search-input {
+        max-width: 100%; /* Ensure search input takes full width on smaller screens */
+
+        width: 100%;
+    }
+    .search-btn {
+        padding: 8px 12px;
+    }
+}
+
+/*asasd*/
+
+.parent-container {
+    overflow: visible; /* Allow the image to expand beyond its container */
+}
+
+.swiper {
+    padding: 50px;
+    width: 80%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    height: 100%;
+}
+.swiper-slide img {
+    width: 100px;
+    height: 150px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+.carousel-inner {
+    justify-content: center;
+    max-height: 400px; /* Adjust this height as needed */
+    margin: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+
+.ml{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
+.swiper-slide img:hover {
+    filter: grayscale(0%);
+}
+
+h2{
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
