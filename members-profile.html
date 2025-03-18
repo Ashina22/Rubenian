@@ -20,67 +20,13 @@
   </head>
 
   <style>
-
-main{
-    margin-bottom: 30px;
-}
-    .btn-custom {
-      padding: 10px 10px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      background-color: rgb(37, 153, 134);
-      color: #ffffff;
-      font-family: "Poppins";
-      letter-spacing: 1px;
-      box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease-in-out;
-      border: none;
-      font-size: 13px;
+    main {
+      margin-bottom: 30px;
     }
 
-    .btn-custom:hover {
-      background-color: rgb(40, 204, 177);
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      color: aliceblue;
+    li {
+      margin-bottom: 5px;
     }
-
-    .btn-secondary {
-  padding: 10px 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  background-color: rgb(108, 117, 125);
-  color: #ffffff;
-  font-family: "Poppins";
-  letter-spacing: 1px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-  border: none;
-  font-size: 13px;
-  margin-left: 10px; /* Spacing between Save and Cancel */
-}
-
-.btn-secondary:hover {
-  background-color: rgb(90, 98, 105);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-input[type="file"]#photoInput {
-    height: auto;
-    padding: 3px 6px;
-    font-size: 12px;
-    width: 200px;
-    justify-content: center;
-  }
-
-    /* Center the file input and button */
-    #editPhotoSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-li{
-  margin-bottom: 5px;
-}
   </style>
 
   <body>
@@ -151,6 +97,26 @@ li{
                 </li>
               </ul>
             </li>
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#users"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-users pe-2"></i> Users
+              </a>
+              <ul
+                id="users"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Create User</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </aside>
@@ -199,148 +165,302 @@ li{
 
         <main class="content px-lg-3 py-2">
           <div class="container-fluid">
-           
             <div class="text-center p-4 mb-4">
-                <img id="profileImage" src="image/profile.jpg" alt="Profile Image" class="rounded-circle mb-3" width="100" height="100">
-                
-                <!-- Edit Photo Section (Hidden by Default) -->
-                <div id="editPhotoSection" class="d-none mb-2">
-                  <input type="file" id="photoInput" accept="image/*" class="form-control mb-2">
-                </div>
-              
-                <h4><li>Abejuro, Argie Lorenzana</li></h4>
-                <span><li><i class="fa-solid fa-location-dot"></i> Cuyaoyao, Pio Duran, Albay</li></span>
-                <li>RICN : 23137</li>
-                <button id="editBtn" class="btn btn-custom mt-3">Edit Profile</button>
-                <button id="cancelBtn" class="btn btn-danger d-none">Cancel</button>
+              <img
+                id="profileImage"
+                src="image/profile.jpg"
+                alt="Profile Image"
+                class="rounded-circle mb-3"
+                width="100"
+                height="100"
+              />
+
+              <!-- Edit Photo Section (Hidden by Default) -->
+              <div id="editPhotoSection" class="d-none mb-2">
+                <input
+                  type="file"
+                  id="photoInput"
+                  accept="image/*"
+                  class="form-control mb-2"
+                />
               </div>
-              
-              
-                <form id="profileForm">
-                  <h5 class="mb-3">About Candidate</h5>
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <label>Volume No.</label>
-                      <input type="text" class="form-control" value="78" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Page No.</label>
-                      <input type="text" class="form-control" value="1" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Birth Date</label>
-                      <input type="date" class="form-control" value="1982-10-06" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Birth Place</label>
-                      <input type="text" class="form-control" value="Agol, Pioduran, Albay" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Nationality</label>
-                      <input type="text" class="form-control" value="Filipino" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Gender</label>
-                      <input type="text" class="form-control" value="Female" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Religion</label>
-                      <input type="text" class="form-control" value="Catholic" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Occupation</label>
-                      <input type="text" class="form-control" value="Sewer" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Contact No.</label>
-                      <input type="text" class="form-control" value="09153968548" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Civil Status</label>
-                      <input type="text" class="form-control" value="Married" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Residence</label>
-                      <input type="text" class="form-control" value="Cuyaoyao, Pio Duran, Albay" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Spouse Name</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Father's Name</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Mother's Name</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>SSS No.</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>GSIS No.</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Tax Identification No.</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>PhilHealth No.</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>HDMF No.</label>
-                      <input type="text" class="form-control" value="Reynate Abejuro" disabled>
-                    </div>
-                  </div>
-              
-                  <h5 class="mt-4 mb-3">In Case of Emergency</h5>
-                  <div class="row">
-                    <div class="col-md-4 mb-3">
-                      <label>Name</label>
-                      <input type="text" class="form-control" value="Reynate M. Abejuro" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Contact No.</label>
-                      <input type="text" class="form-control" value="0" disabled>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label>Address</label>
-                      <input type="text" class="form-control" value="La Medalla, Pio Duran" disabled>
-                    </div>
-                  </div>
-              
-                  <h5 class="mt-4 mb-3">Paid Under</h5>
-                  <div class="row">
-                    <div class="col-md-3 mb-3">
-                      <label>OR No.</label>
-                      <input type="text" class="form-control" value="30155" disabled>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label>Issued at</label>
-                      <input type="text" class="form-control" value="National Office" disabled>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                      <label>Issued on</label>
-                      <input type="date" class="form-control" value="2017-12-25" disabled>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label>Issued by</label>
-                        <input type="text" class="form-control" value="" disabled>
-                      </div>
-                  </div>
-              
-                  <div class="text-center">
-                    <button type="submit" class="btn d-none btn-custom" id="saveBtn">Save Changes</button>
-                    <button type="button" class="btn d-none btn-secondary" id="cancelBtn">Cancel</button>
-                  </div>
-                  
-                </form>
-             
-              
+
+              <h5><li>Abejuro, Argie Lorenzana</li></h5>
+              <span
+                ><li>
+                  <i class="fa-solid fa-location-dot"></i> Cuyaoyao, Pio Duran,
+                  Albay
+                </li></span
+              >
+              <li>RICN : 23137</li>
+              <button id="editBtn" class="btn btn-edit mt-3">
+                Edit Profile
+              </button>
+              <button id="cancelBtn" class="btn btn-danger d-none">
+                Cancel
+              </button>
+            </div>
+
+            <form id="profileForm">
+              <h5 class="mb-3">About Candidate</h5>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label>First Name</label>
+                  <input type="text" class="form-control" value="Argie" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Last Name</label>
+                  <input type="text" class="form-control" value="Abejuro" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Middle Name</label>
+                  <input type="text" class="form-control" value="Lorenzana" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Registered No.</label>
+                  <input type="text" class="form-control" value="23137" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Volume No.</label>
+                  <input type="text" class="form-control" value="78" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Page No.</label>
+                  <input type="text" class="form-control" value="1" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Birth Date</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    value="1982-10-06"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Birth Place</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Agol, Pioduran, Albay"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Nationality</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Filipino"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Gender</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Female"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Religion</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Catholic"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Occupation</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Sewer"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Contact No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="09153968548"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Civil Status</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Married"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Residence</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Cuyaoyao, Pio Duran, Albay"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Spouse Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Father's Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Mother's Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>SSS No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>GSIS No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Tax Identification No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>PhilHealth No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>HDMF No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate Abejuro"
+                    disabled
+                  />
+                </div>
+              </div>
+
+              <h5 class="mt-4 mb-3">In Case of Emergency</h5>
+              <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label>Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="Reynate M. Abejuro"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Contact No.</label>
+                  <input type="text" class="form-control" value="0" disabled />
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label>Address</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="La Medalla, Pio Duran"
+                    disabled
+                  />
+                </div>
+              </div>
+
+              <h5 class="mt-4 mb-3">Paid Under</h5>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label>OR No.</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="30155"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Issued at</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    value="National Office"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Issued on</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    value="2017-12-25"
+                    disabled
+                  />
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label>Issued by</label>
+                  <input type="text" class="form-control" value="" disabled />
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="btn d-none btn-edit"
+                  id="saveBtn"
+                >
+                  Save Changes
+                </button>
+                <button
+                  type="button"
+                  class="btn d-none btn-secondary cancel"
+                  id="cancelBtn"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
           </div>
         </main>
         <a href="#" class="theme-toggle">
@@ -362,67 +482,6 @@ li{
         </footer>
       </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const editBtn = document.getElementById("editBtn");
-          const saveBtn = document.getElementById("saveBtn");
-          const cancelBtn = document.getElementById("cancelBtn");
-          const editPhotoSection = document.getElementById("editPhotoSection");
-          const photoInput = document.getElementById("photoInput");
-          const profileImage = document.getElementById("profileImage");
-          const formFields = document.querySelectorAll("#profileForm input");
-        
-          // Store the original image src to revert if cancelled
-          const originalImageSrc = profileImage.src;
-        
-          editBtn.addEventListener("click", function () {
-            formFields.forEach(field => field.disabled = false);
-            saveBtn.classList.remove("d-none");
-            cancelBtn.classList.remove("d-none");
-            editBtn.classList.add("d-none");
-            editPhotoSection.classList.remove("d-none");
-          });
-        
-          cancelBtn.addEventListener("click", function () {
-            formFields.forEach(field => field.disabled = true);
-            saveBtn.classList.add("d-none");
-            cancelBtn.classList.add("d-none");
-            editBtn.classList.remove("d-none");
-            editPhotoSection.classList.add("d-none");
-            profileImage.src = originalImageSrc; // Revert image preview
-            photoInput.value = ""; // Clear file input
-          });
-        
-          // Optional: Preview selected image immediately
-          photoInput.addEventListener("change", function () {
-            const file = this.files[0];
-            if (file) {
-              const reader = new FileReader();
-              reader.onload = function (e) {
-                profileImage.src = e.target.result;
-              };
-              reader.readAsDataURL(file);
-            }
-          });
-        
-          // Example submit event (You can handle backend processing here)
-          document.getElementById("profileForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Profile saved successfully!");
-        
-            formFields.forEach(field => field.disabled = true);
-            saveBtn.classList.add("d-none");
-            cancelBtn.classList.add("d-none");
-            editBtn.classList.remove("d-none");
-            editPhotoSection.classList.add("d-none");
-            // Note: You would need backend code to actually upload the photo
-          });
-        });
-        </script>
-        
-        
-
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>

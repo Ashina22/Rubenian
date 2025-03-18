@@ -42,7 +42,7 @@ a{
 .submit {
   border: none;
   outline: none;
-  background-color: royalblue;
+  background-color: rgb(37, 153, 134);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 5px;
@@ -67,7 +67,7 @@ h4 {
 }
 
 .submit:hover {
-  background-color: rgb(56, 90, 194);
+  background-color:rgb(37, 153, 134);
 }
 
 .form-header {
@@ -209,12 +209,27 @@ h4 {
 
 .footer-link {
   text-decoration: none;
-  color: #007bff;
+  color: #28c986;
   font-weight: 500;
   margin: 0 5px;
 }
 
 .footer-link:hover {
   text-decoration: underline;
-  color: #0056b3;
+  color: #28c986;
+}
+
+.extra-links {
+  margin-top: 10px;
+  font-size: 14px;
+}
+.extra-links a {
+  text-decoration: none;
+  color: rgb(37, 153, 134);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.extra-links a:hover {
+  text-decoration: underline;
+  color:rgb(37, 153, 134);
 }

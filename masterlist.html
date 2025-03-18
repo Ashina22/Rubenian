@@ -33,33 +33,6 @@
         font-size: 12px;
     }
 }
-
-
-    .btn-custom {
-        padding: 10px 10px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        background-color:  rgb(37, 153, 134);
-        color: #ffffff;
-        font-family: "Poppins";
-        letter-spacing: 1px;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-        transition: all 0.2s ease-in-out;
-        border: none;
-        font-size: 13px;
-    }
-
-    .btn-custom:hover {
-        background-color:  rgb(40, 204, 177);
-        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        color: aliceblue;
-    }
-
-    .table img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
         .container {
             margin-top: 20px;
         }
@@ -106,10 +79,32 @@
                         </a>
                         <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item"><a href="regionalchapter.html" class="sidebar-link">Regional Chapter</a></li>
-                            <li class="sidebar-item"><a href="#" class="sidebar-link">Municipal Chapter</a></li>
+                            <li class="sidebar-item"><a href="municipalities.html" class="sidebar-link">Municipal Chapter</a></li>
                             <li class="sidebar-item"><a href="#" class="sidebar-link">Barangay Chapter</a></li>
                         </ul>
                     </li>
+                    <li class="sidebar-item">
+                        <a
+                          href="#"
+                          class="sidebar-link collapsed"
+                          data-bs-target="#users"
+                          data-bs-toggle="collapse"
+                          aria-expanded="false"
+                        >
+                          <i class="fa-solid fa-users pe-2"></i> Users
+                        </a>
+                        <ul
+                          id="users"
+                          class="sidebar-dropdown list-unstyled collapse"
+                          data-bs-parent="#sidebar"
+                        >
+                          <li class="sidebar-item">
+                            <a href="createusers.html" class="sidebar-link"
+                              >Create User</a
+                            >
+                          </li>
+                        </ul>
+                      </li>
                 </ul>
             </div>
         </aside>
@@ -154,7 +149,7 @@
                    
                         <h2 class="text-center my-4">Members Masterlist</h2>
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-custom">
+                            <button class="btn btn-add">
                                 <i class="fas fa-user-plus"></i> Add Members
                             </button>
                         </div>

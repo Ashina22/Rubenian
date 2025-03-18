@@ -13,7 +13,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <style>
@@ -24,10 +27,10 @@
       gap: 15px;
       padding: 20px;
     }
-h5{
-  font-size: 20px;
-  font-weight: 500;
-}
+    h5 {
+      font-size: 20px;
+      font-weight: 500;
+    }
     .btn-region {
       flex: 1 1 150px; /* Makes buttons equal width with a minimum size */
       text-align: center;
@@ -86,68 +89,71 @@ h5{
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       color: aliceblue;
     }
-    
-   /* Make input field and buttons closer */
 
- /* Modal styles */
- .modal-content {
+    /* Make input field and buttons closer */
+
+    /* Modal styles */
+    .modal-content {
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       border: none;
     }
-    
+
     .modal-header {
       background-color: rgb(37, 153, 134);
       color: white;
       border-bottom: none;
     }
 
-.modal-body {
-  padding-bottom: 5px;
-}
+    .modal-body {
+      padding-bottom: 5px;
+    }
 
-/* Align buttons side by side with equal width */
-.modal-footer {
-  display: flex;
-  justify-content: flex-end; /* Align to right */
-  padding-top: 0;
-  border-top: none;
-}
+    /* Align buttons side by side with equal width */
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end; /* Align to right */
+      padding-top: 0;
+      border-top: none;
+    }
 
-/* Custom style for Add button only */
-.btn-add-chapter {
-  background-color: rgb(37, 153, 134);
-  color: white;
-  border: none;
-  transition: all 0.2s ease-in-out;
-  letter-spacing: 1px;
-  font-size: 13px;
-}
+    /* Custom style for Add button only */
+    .btn-add-chapter {
+      background-color: rgb(37, 153, 134);
+      color: white;
+      border: none;
+      transition: all 0.2s ease-in-out;
+      letter-spacing: 1px;
+      font-size: 13px;
+    }
 
-.btn-add-chapter:hover {
-  background-color: rgb(40, 204, 177);
-  color: white;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+    .btn-add-chapter:hover {
+      background-color: rgb(40, 204, 177);
+      color: white;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
 
-/* Ensure consistent style for Cancel button */
-.modal-footer .btn-secondary {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  font-size: 13px;
-}
+    /* Ensure consistent style for Cancel button */
+    .modal-footer .btn-secondary {
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      font-size: 13px;
+    }
 
-.modal-footer .btn-secondary:hover {
-  background-color: #5a6268;
-  color: white;
-}
-
+    .modal-footer .btn-secondary:hover {
+      background-color: #5a6268;
+      color: white;
+    }
   </style>
 
   <body>
     <div class="wrapper">
-      <aside id="sidebar" class="js-sidebar" style="background-color: rgb(43, 155, 136)">
+      <aside
+        id="sidebar"
+        class="js-sidebar"
+        style="background-color: rgb(43, 155, 136)"
+      >
         <!-- Content For Sidebar -->
         <div class="h-100">
           <div
@@ -197,13 +203,37 @@ h5{
                 data-bs-parent="#sidebar"
               >
                 <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Regional Chapter</a>
+                  <a href="regionalchapter.html" class="sidebar-link"
+                    >Regional Chapter</a
+                  >
                 </li>
                 <li class="sidebar-item">
-                  <a href="#" class="sidebar-link">Municipal Chapter</a>
+                  <a href="municipalities.html" class="sidebar-link"
+                    >Municipal Chapter</a
+                  >
                 </li>
                 <li class="sidebar-item">
                   <a href="#" class="sidebar-link">Barangay Chapter</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-item">
+              <a
+                href="#"
+                class="sidebar-link collapsed"
+                data-bs-target="#users"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-users pe-2"></i> Users
+              </a>
+              <ul
+                id="users"
+                class="sidebar-dropdown list-unstyled collapse"
+                data-bs-parent="#sidebar"
+              >
+                <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">Create User</a>
                 </li>
               </ul>
             </li>
@@ -257,14 +287,20 @@ h5{
           <div class="container-fluid">
             <h2 class="text-center my-4">Province Chapter</h2>
             <div class="d-flex justify-content-end">
-              <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#addChapterModal">
+              <button
+                class="btn btn-custom"
+                data-bs-toggle="modal"
+                data-bs-target="#addChapterModal"
+              >
                 <i class="fas fa-plus"></i> Add Chapter
               </button>
             </div>
           </div>
           <div class="container">
             <div class="btn-container">
-            <a href="viewmembers.html"><button class="btn btn-region">NCR</button></a>
+              <a href="viewmembers.html"
+                ><button class="btn btn-region">NCR</button></a
+              >
               <button class="btn btn-region">CAR</button>
               <button class="btn btn-region">Region I</button>
               <button class="btn btn-region">Region II</button>
@@ -285,32 +321,57 @@ h5{
             </div>
           </div>
         </main>
-        
 
         <!-- Add Chapter Modal -->
-<div class="modal fade modal-sm" id="addChapterModal" tabindex="-1" aria-labelledby="addChapterModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addChapterModalLabel">Add Province</h5>
-      </div>
-      <div class="modal-body">
-        <form id="addChapterForm">
-          <div class="mb-3">
-            <label for="chapterName" class="form-label">Chapter Name</label>
-            <input type="text" class="form-control" id="chapterName" placeholder="e.g. NCR, Region IV">
+        <div
+          class="modal fade modal-sm"
+          id="addChapterModal"
+          tabindex="-1"
+          aria-labelledby="addChapterModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="addChapterModalLabel">
+                  Add Province
+                </h5>
+              </div>
+              <div class="modal-body">
+                <form id="addChapterForm">
+                  <div class="mb-3">
+                    <label for="chapterName" class="form-label"
+                      >Chapter Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="chapterName"
+                      placeholder="e.g. NCR, Region IV"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-add-chapter"
+                  id="saveChapter"
+                >
+                  Add
+                </button>
+              </div>
+            </div>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-add-chapter" id="saveChapter">Add</button>
-      </div>
-    </div>
-  </div>
-</div>
+        </div>
 
-        
         <a href="#" class="theme-toggle">
           <i class="fa-regular fa-moon"></i>
           <i class="fa-regular fa-sun"></i>
@@ -319,7 +380,11 @@ h5{
           <div class="container pb-2">
             <div class="row d-flex justify-content-center">
               <div class="col-md-6 text-md-left text-center">
-                <p class="mb-0">&copy; 2024 Rubenian Membership Portal. Made with <span><i class="fa-solid fa-heart"></i></span> by <span>BehindWeb</span>.</p>
+                <p class="mb-0">
+                  &copy; 2024 Rubenian Membership Portal. Made with
+                  <span><i class="fa-solid fa-heart"></i></span> by
+                  <span>BehindWeb</span>.
+                </p>
               </div>
             </div>
           </div>
