@@ -124,6 +124,33 @@ a.sidebar-link {
   width: 40px;
 }
 
+/* Navbar*/
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  right: 0;
+  left: auto;
+  z-index: 1000;
+  float: none;
+  margin-top: 0;
+}
+
+/* Ensure the parent container has proper positioning */
+.navbar-nav .nav-item.dropdown {
+  position: relative;
+}
+
+/* Additional padding to ensure dropdown has space */
+.navbar .dropdown-menu {
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure avatar has position relative */
+.nav-icon {
+  position: relative;
+  display: inline-block;
+}
 .navbar {
   padding-top: 20px; /* Adjust as needed */
 }
@@ -131,6 +158,7 @@ a.sidebar-link {
 .navbar-expand .navbar-nav {
   margin-left: auto;
 }
+/* end of Navbar*/
 
 .content {
   flex: 1;

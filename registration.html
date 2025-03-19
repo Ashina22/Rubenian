@@ -1,87 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | Rubenian Membership Portal</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General body styling */
 
-<style>
-    span { color: #28c986; }
-</style>
+      .page-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-<body>
-    <div class="d-flex justify-content-center align-items-center vh-100">
-        <div class="form-container text-center">
-            <img src="image/Rubenian-Logo-344.png" width="100" height="100" alt="Logo">
-            <h1 class="form-title">Register</h1>
-            <p>Create your account</p>
-            <form class="form">
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Last Name</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Middle Name</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>First Name</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Username</span>
-                </label>
-                <label>
-                    <input required type="password" class="input" placeholder="">
-                    <span>Password</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Department</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Position</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Location</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Staff ID</span>
-                </label>
-                <label>
-                    <input required type="text" class="input" placeholder="">
-                    <span>Access Level</span>
-                </label>
+      .content-wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
 
-                <button class="submit">Register</button>
+      /* Card styling */
+      .registration-card {
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 800px;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
 
-                <!-- Link to Login -->
-                <div class="extra-links">
-                    <a href="login.html">Already have an account? Login</a>
+      /* Header section */
+      .card-header {
+        background-color: rgb(37, 153, 134);
+        padding: 30px 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .logo-container {
+        background-color: white;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+        padding: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-header h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .card-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      /* Form section */
+      .card-body {
+        padding: 30px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+      }
+
+      .form-group {
+        flex: 1;
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: #28c986;
+        box-shadow: 0 0 0 3px rgba(40, 201, 134, 0.2);
+        outline: none;
+      }
+
+      .form-label {
+        position: absolute;
+        left: 15px;
+        top: 12px;
+        color: #6c757d;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        background-color: white;
+        padding: 0 5px;
+      }
+
+      .form-control:focus + .form-label,
+      .form-control:not(:placeholder-shown) + .form-label {
+        top: -10px;
+        left: 10px;
+        font-size: 14px;
+        color: #28c986;
+        font-weight: bold;
+      }
+
+      /* Button styling */
+      .register-btn {
+        background-color: rgb(37, 153, 134);
+        border: none;
+        padding: 15px 25px;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        margin: 15px 0;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .register-btn:hover {
+        background-color: #23ad74;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(40, 201, 134, 0.3);
+      }
+
+      /* Login link */
+      .login-link {
+        text-align: center;
+        margin-top: 15px;
+      }
+
+      .login-link a {
+        color: #28c986;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer styling */
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 0;
+        text-align: center;
+        margin-top: auto;
+      }
+
+      footer p {
+        margin-bottom: 0;
+      }
+
+      footer .heart {
+        color: #28c986;
+        animation: heartbeat 1.2s infinite;
+      }
+
+      footer .brand {
+        color: #28c986;
+        font-weight: bold;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .form-row {
+          flex-direction: column;
+          gap: 0;
+        }
+
+        .card-header h1 {
+          font-size: 2rem;
+        }
+
+        .logo-container {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <div class="content-wrapper">
+        <div class="registration-card">
+          <div class="card-header">
+            <div class="logo-container">
+              <img
+                src="image/Rubenian-Logo-344.png"
+                width="80"
+                height="80"
+                alt="Rubenian Logo"
+              />
+            </div>
+            <h1>Create Account</h1>
+            <p>Join the Rubenian Membership Portal</p>
+          </div>
+
+          <div class="card-body">
+            <form>
+              <!-- Name fields -->
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="firstName" class="form-label">First Name</label>
                 </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="middleName"
+                    placeholder=" "
+                  />
+                  <label for="middleName" class="form-label">Middle Name</label>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="lastName" class="form-label">Last Name</label>
+                </div>
+              </div>
+
+              <!-- Account details -->
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="username" class="form-label">Username</label>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="password" class="form-label">Password</label>
+                </div>
+              </div>
+
+              <!-- Work information -->
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="department"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="department" class="form-label">Department</label>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="position"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="position" class="form-label">Position</label>
+                </div>
+              </div>
+
+              <!-- Additional information -->
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="location"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="location" class="form-label">Location</label>
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="staffId"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="staffId" class="form-label">Staff ID</label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="accessLevel"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="accessLevel" class="form-label"
+                    >Access Level</label
+                  >
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="register-btn text-white">
+                <i class="fas fa-user-plus"></i> Create Account
+              </button>
+
+              <!-- Login link -->
+              <div class="login-link">
+                <p>Already have an account? <a href="login.html">Sign In</a></p>
+              </div>
             </form>
+          </div>
         </div>
+      </div>
+
+      <footer>
+        <div class="container">
+          <p>
+            &copy; 2024 Rubenian Membership Portal. Made with
+            <i class="fa-solid fa-heart heart"></i> by
+            <span class="brand">BehindWeb</span>.
+          </p>
+        </div>
+      </footer>
     </div>
 
-    <footer class="text-center text-lg-start">
-        <div class="container pb-2">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-6 text-md-left text-center">
-                    <p class="mb-0">&copy; 2024 Rubenian Membership Portal. Made with <span><i class="fa-solid fa-heart"></i></span> by <span>BehindWeb</span>.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
